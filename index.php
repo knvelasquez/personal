@@ -472,9 +472,7 @@
                 <div data-panel="panel-1">
                     <div class="row">
                         <!-- Project Main Content Starts -->
-                        <div class="col s12 l6 xl6 section-padding section-padding-right-none">
-                            <img class="responsive-img" src="images/projects/project-1.jpg" alt="project" />
-                        </div>
+                       
                         <!-- Project Main Content Ends -->
                         <!-- Project Details Starts -->
                         <div class="col s12 l6 xl6 section-padding">
@@ -495,17 +493,6 @@
 				<!-- Project Starts -->
                 <div data-panel="panel-2">
                     <div class="row">
-                        <!-- Project Main Content Starts -->
-                        <div class="col s12 l6 xl6 section-padding section-padding-right-none">
-                            <div class="carousel carousel-slider">
-                                <a class="carousel-item" href="#one!"><img class="responsive-img" src="images/projects/project-2.jpg" alt="project" ></a>
-                                <a class="carousel-item" href="#two!"><img class="responsive-img" src="images/projects/project-1.jpg" alt="project" ></a>
-                                <a class="carousel-item" href="#three!"><img class="responsive-img" src="images/projects/project-3.jpg" alt="project" ></a>
-                                <a class="carousel-item" href="#four!"><img class="responsive-img" src="images/projects/project-4.jpg" alt="project" ></a>
-                            </div>
-                        </div>
-                        <!-- Project Main Content Ends -->
-                        <!-- Project Details Starts -->
                         <div class="col s12 l6 xl6 section-padding">
                             <h3 class="font-weight-700 uppercase">Slider Project</h3>
                             <ul class="project-details second-font">
@@ -550,14 +537,6 @@
 				<!-- Project Starts -->
                 <div data-panel="panel-4">
                     <div class="row">
-                        <!-- Project Main Content Starts -->
-                        <div class="col s12 l6 xl6 section-padding section-padding-right-none">
-                            <video id="video" class="responsive-video" controls poster="images/projects/video/video-poster.png">
-								<source src="images/projects/video/video.mp4" type="video/mp4">
-							</video>
-                        </div>
-                        <!-- Project Main Content Ends -->
-                        <!-- Project Details Starts -->
                         <div class="col s12 l6 xl6 section-padding">
                             <h3 class="font-weight-700 uppercase">Local Video</h3>
                             <ul class="project-details second-font">
