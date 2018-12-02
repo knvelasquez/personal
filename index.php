@@ -555,12 +555,6 @@
 				<!-- Project Starts -->
                 <div data-panel="panel-5">
                     <div class="row">
-                        <!-- Project Main Content Starts -->
-                        <div class="col s12 l6 xl6 section-padding section-padding-right-none">
-                            <img src="images/projects/project-5.jpg" alt="project" />
-                        </div>
-                        <!-- Project Main Content Ends -->
-                        <!-- Project Details Starts -->
                         <div class="col s12 l6 xl6 section-padding">
                             <h3 class="font-weight-700 uppercase">Image Project</h3>
                             <ul class="project-details second-font">
@@ -579,12 +573,6 @@
 				<!-- Project Starts -->
                 <div data-panel="panel-6">
                     <div class="row">
-                        <!-- Project Main Content Starts -->
-                        <div class="col s12 l6 xl6 section-padding section-padding-right-none">
-                            <img src="images/projects/project-6.jpg" alt="project" />
-                        </div>
-                        <!-- Project Main Content Ends -->
-                        <!-- Project Details Starts -->
                         <div class="col s12 l6 xl6 section-padding">
                             <h3 class="font-weight-700 uppercase">Image Project</h3>
                             <ul class="project-details second-font">
@@ -603,12 +591,6 @@
 				<!-- Project Starts -->
                 <div data-panel="panel-7">
                     <div class="row">
-                        <!-- Project Main Content Starts -->
-                        <div class="col s12 l6 xl6 section-padding section-padding-right-none">
-                            <img src="images/projects/project-7.jpg" alt="project" />
-                        </div>
-                        <!-- Project Main Content Ends -->
-                        <!-- Project Details Starts -->
                         <div class="col s12 l6 xl6 section-padding">
                             <h3 class="font-weight-700 uppercase">Image Project</h3>
                             <ul class="project-details second-font">
@@ -627,12 +609,6 @@
 				<!-- Project Starts -->
                 <div data-panel="panel-8">
                     <div class="row">
-                        <!-- Project Main Content Starts -->
-                        <div class="col s12 l6 xl6 section-padding section-padding-right-none">
-                            <img src="images/projects/project-8.jpg" alt="project" />
-                        </div>
-                        <!-- Project Main Content Ends -->
-                        <!-- Project Details Starts -->
                         <div class="col s12 l6 xl6 section-padding">
                             <h3 class="font-weight-700 uppercase">Image Project</h3>
                             <ul class="project-details second-font">
@@ -651,12 +627,6 @@
 				<!-- Project Starts -->
                 <div data-panel="panel-9">
                     <div class="row">
-                        <!-- Project Main Content Starts -->
-                        <div class="col s12 l6 xl6 section-padding section-padding-right-none">
-                            <img src="images/projects/project-9.jpg" alt="project" />
-                        </div>
-                        <!-- Project Main Content Ends -->
-                        <!-- Project Details Starts -->
                         <div class="col s12 l6 xl6 section-padding">
                             <h3 class="font-weight-700 uppercase">Image Project</h3>
                             <ul class="project-details second-font">
