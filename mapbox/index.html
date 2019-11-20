@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Check To See What You Can Get In Your Area</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#7528ff">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description" content="Check To See What You Can Get In Your Area" />
+
+    <link rel='preconnect' href='//fonts.googleapis.com' />
+    <link rel='preconnect' href='//www.googletagmanager.com' />
+    <link rel='preconnect' href='//www.google-analytics.com' />
+    <link rel='preconnect' href='//connect.facebook.net' />
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-M484PKT');</script>
+
+
+    <link href="/blog/tvbuddy/favicon.png" rel="icon" sizes="32x32" type="image/png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+        integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+        crossorigin="">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            /*            min-height: 70rem;*/
+            padding-top: 4.5rem;
+        }
+
+        nav {
+            box-shadow: 0 2px 6px 0 rgba(0, 0, 0, .12), inset 0 -1px 0 0 #dadce0;
+            top: 3px !important;
+        }
+
+        .navbar-brand {
+            color: #5f6368;
+        }
+
+        h1.title {
+            font-size: 1.8rem;
+            margin-bottom: 0;
+        }
+
+        p.category {
+            font-size: 80%;
+            font-weight: 400;
+            color: #595959;
+            margin-bottom: 0.7rem;
+            letter-spacing: 5px;
+        }
+
+        main {
+            padding: 2rem !important;
+        }
+
+        main a {
+            color: #7528ff;
+        }
+
+        main a:hover {
+            color: #5d03ff;
+        }
+
+        main .col-lg-8>p {
+            margin-bottom: 1.5rem;
+        }
+
+        blockquote {
+            background: #f9f9f9;
+            border-left: 5px solid #ccc;
+            margin: 1.5em 0;
+            padding: 0.5em 10px;
+            font-size: 95%;
+        }
+
+        blockquote.dark {
+            background-color: #000000;
+            border-left: none;
+            color: #FFFFFF;
+            margin: 0 0 2em;
+            padding: 1em;
+            border-radius: 10px;
+        }
+
+        blockquote.dark p {
+            font-style: italic;
+        }
+
+        h3 {
+            margin-top: 1.2rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .embed-responsive+figcaption {
+            margin-top: 0.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .mapbox {
+            padding: 0 1.5rem 1.5rem !important;
+        }
+
+        .mapbox #mapid {
+            height: 200px;
+            margin-bottom: 1.2rem;
+            z-index: 5
+        }
+
+        .mapbox .btn {
+            color: #FFFFFF;
+            background-color: #46da70;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 15px;
+            font-size: 12px;
+        }
+
+        #channels-found {
+            font-weight: bold;
+            color: #46D2A1;
+        }
+
+        #channels-found,
+        #countUp {
+            color: #26C18A;
+        }
+
+        #channels-found,
+        .mapbox #main-cta {
+            display: none;
+        }
+
+        @media (min-width: 576px) {
+            .mapbox #mapid {
+                height: 350px;
+            }
+
+            .mapbox .btn {
+                font-size: 14px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .mapbox {
+                text-align: center;
+            }
+        }
+
+        input.error {
+            border: 1px solid #dc3545;
+        }
+
+        ._form-branding {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="tvbuddy">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M484PKT" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <nav class="navbar fixed-top shadow-sm bg-light">
+        <div class="container px-0">
+            <span class="navbar-brand text-center mx-auto">
+                <!--<img src="/blog/tvbuddy/images/tvbuddy-logo.png" class="d-inline-block align-top img-fluid"
+                    alt="TVBuddy Antenna">-->
+            </span>
+        </div>
+    </nav>
+
+    <div class="container px-0">
+        <div class="row no-gutters">
+            <div class="col-lg-8 mx-auto pt-4 px-4 pb-0 text-center">
+                <p class="category">CHANNEL SCANNER&trade;</p>
+                <h1 id="title" class="title mb-4 animated">Check To See What You Can Get In Your Area
+                </h1>
+                <h3 id="channels-found" style="display: none;"><span id="countUp"></span> Channels Found</h3>
+                <p id="enterZipText" class="font-weight-bold text-danger">Please enter your zip code below
+                    <i class="fas fa-arrow-down"></i>
+                </p>
+                <h4 id="channels-found" class="text-center mt-3 animated">
+                    <span id="countUp" class="d-none">string</span>
+                </h4>
+            </div>
+        </div>
+    </div>
+
+    <main class="container p-0">
+        <div class="row no-gutters">
+            <div id="mapboxContainer" class="mapbox col-lg-8 mx-auto">
+                <div class="form-group">
+                    <input id="zipcode" class="form-control form-control-lg" type="text" placeholder="Zip Code"
+                        required />
+                </div>
+                <a id="check-stock" class="btn btn-block mb-4" href="#mapid">CHECK YOUR AREA</a>
+
+                <div id="emailForm" class="_form_45" style="display: none;"></div>
+                <script src="https://dthsqd.activehosted.com/f/embed.php?id=45"></script>
+
+                <a href="" class="offer-link" id="noThanks"
+                    style="display: none; color: #888888; font-size: 80%; margin: 30px 0; text-decoration: underline; text-align: center;">No
+                    thanks, I'd rather pay full price &raquo;</a>
+
+                <p id="emailTC"
+                    style="font-size: 12px; font-style: italic; color: #999999; border-top: 1px solid #CCCCCC; padding-top: 20px; display: none;">
+                    By signing up, you agree to receive exclusive offers, promotions and commercial messages. You may
+                    unsubscribe
+                    at any time.</p>
+
+                <script>
+                    function getURLParameter(name) {
+                        return decodeURI(
+                            (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search) || [, null])[1] || ''
+                        );
+                    }
+
+                    var s1 = getURLParameter('s1');
+                    var sub1 = getURLParameter('sub1');
+                    console.log(sub1);
+
+                    document.getElementsByName('field[5]')[0].value = window.location.hostname;
+                    document.getElementsByName('field[4]')[0].value = sub1;
+                </script>
+
+                <div id="mapid"></div>
+                <a id="main-cta" class="offer-link btn btn-block mb-4 animated d-none" href="">CONTINUE
+                    <i class="fas fa-angle-right fa-lg"></i>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-light py-3 mt-lg-4">
+        <p class="small text-center m-0">
+            <strong>&copy; 2019 All Rights Reserved.</strong>
+            <br />
+            <a href="https://www.gettvbuddy.com/en/policy.html" class="text-muted" rel="noopener"
+                target="_blank">Privacy Policy</a> &nbsp;
+            <a href="https://www.gettvbuddy.com/en/terms.html" class="text-muted" rel="noopener" target="_blank">Terms
+                of Use</a> &nbsp;
+            <a href="https://www.gettvbuddy.com/en/contact-us.html" class="text-muted" rel="noopener"
+                target="_blank">Contact Us</a> &nbsp;
+        </p>
+        <div style="text-align: center; margin: 10px 0 0;">
+            <a href="//www.dmca.com/Protection/Status.aspx?ID=d202c7fd-726e-45d3-819f-f6726a5e8d0b"
+                title="DMCA.com Protection Status" class="dmca-badge">
+                <img src="https://images.dmca.com/Badges/_dmca_premi_badge_5.png?ID=d202c7fd-726e-45d3-819f-f6726a5e8d0b"
+                    alt="DMCA.com Protection Status" />
+            </a>
+            <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"></script>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="js/jquery.mobile.min.js"></script>
+    <script src="js/c.js"></script>
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+        integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+        crossorigin=""></script>
+    <script src="js/mapboxWithCountryDetect.js"></script>
+
+    <script>
+        var title = document.getElementById('title');
+        var zipcode = document.getElementById('zipcode');
+        var checkstock = document.getElementById('check-stock');
+        var enterZipText = document.getElementById('enterZipText');
+        var mapboxContainer = document.getElementById('mapboxContainer');
+        var channelsfound = document.getElementById('channels-found');
+        var maincta = document.getElementById('main-cta');
+        var emailForm = document.getElementById('emailForm');
+        var noThanks = document.getElementById('noThanks');
+        var emailTC = document.getElementById('emailTC');
+
+        checkstock.addEventListener("click", function (e) {
+            e.preventDefault();
+            if (!zipcode.value) {
+                zipcode.classList.add('error');
+            } else {
+                zipcode.style.display = 'none';
+                checkstock.style.display = 'none';
+                enterZipText.style.display = 'none';
+                mapboxContainer.classList.add('pt-0');
+                // title.innerText = 'Checking...';
+                title.classList.remove('mb-4');
+                title.classList.add('mb-2', 'pulse', 'infinite');
+                setTimeout(function () {
+                    title.classList.remove('pulse', 'infinite');
+                    title.classList.add('fadeIn');
+                    title.innerText = 'Congratulations!';
+                    // maincta.classList.add('slideInDown');
+                    channelsfound.classList.add('fadeIn');
+                    channelsfound.innerText = 'You have over 600 free premium and local channels in your area.';
+
+                    emailForm.style.display = 'block';
+                    noThanks.style.display = 'block';
+                    emailTC.style.display = 'block';
+
+                }, 3600);
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>
