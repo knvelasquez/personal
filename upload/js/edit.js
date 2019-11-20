@@ -222,7 +222,7 @@ $(".rotate").bind('click',function(e){
 		type: "POST",
 		url: "rotate.php",
 		data: {
-		 'file' : $(this).parent().parent().parent().find('.img').attr('src')
+		 'file' : $(this).parent().parent().parent().find('.img').attr('src').replace("uploads/","")
 		},
 		beforeSend: function()
 		{
