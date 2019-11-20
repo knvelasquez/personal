@@ -9,12 +9,12 @@ if(isset($_GET["file"])){
 if(isset($_POST["file"])){
 	$filename = $_POST['file'];  //this is the original file
 }
-$filename="uploads/$filename";
-if(!file_exists($filename))
+//if(!file_exists($filename))
+if(!@getimagesize($filename))
 {
 	die("file not found $filename");
 }
-
+//var_dump(@getimagesize($filename));
 $ext = pathinfo($filename, PATHINFO_EXTENSION);
 $info   = getimagesize($filename);
 $type = $info['mime'];
