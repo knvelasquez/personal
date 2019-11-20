@@ -9,7 +9,7 @@ if(isset($_GET["file"])){
 if(isset($_POST["file"])){
 	$filename = $_POST['file'];  //this is the original file
 }
-
+$filename="uploads/$filename";
 if(!file_exists($filename))
 {
 	die("file not found $filename");
