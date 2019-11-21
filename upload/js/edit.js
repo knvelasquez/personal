@@ -266,9 +266,9 @@ $(".rotate").bind('click',function(e){
 						type: 'GET',
 						success: function(data, status) {													
 							b.parent().parent().parent().find('.img').attr('src', "uploads/"+file_orig.replace("uploads/",""));														
-							//b.parent().parent().parent().parent().find('.modal-img').attr('src',o);
-							//b.parent().parent().parent().parent().parent().find('.big-img').attr('src',o);
-							//$(this).parent().parent().parent().parent().find('.modal-img').cropper('replace',o);
+							b.parent().parent().parent().parent().find('.modal-img').attr('src',"uploads/"+file_orig.replace("uploads/",""));
+							b.parent().parent().parent().parent().parent().find('.big-img').attr('src',"uploads/"+file_orig.replace("uploads/",""));
+							$(this).parent().parent().parent().parent().find('.modal-img').cropper('replace',"uploads/"+file_orig.replace("uploads/",""));
 							saveImages();
 							b.parent().parent().parent().parent().find('.loader').hide();
 							rotate = false;							
