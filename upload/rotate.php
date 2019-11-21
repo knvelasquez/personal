@@ -1,6 +1,6 @@
 <?php
 // Start the session
-session_start();
+//session_start();
 
 //ini_set('memory_limit', '1024M');
 //change this to be whatever degree of rotation you want
