@@ -1,13 +1,14 @@
 <?php
 // Start the session
 //session_start();
-die("ok");
+
 //ini_set('memory_limit', '1024M');
 //change this to be whatever degree of rotation you want
 $degree = (isset($_POST["degree"]))?$_POST["degree"]:(isset($_GET["degree"]))?$_GET["degree"]:90;
 //this is the original file
 $filename=(isset($_POST["file"]))?$_POST["file"]:$_GET["file"];
 $filename="uploads/$filename";
+die($filename);
 //if(!file_exists($filename))
 //if(!@getimagesize($filename))
 //{
