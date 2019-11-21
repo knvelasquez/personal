@@ -316,8 +316,8 @@ $(".rotate").bind('click',function(e){
 				b.parent().parent().parent().parent().parent().find('.loader').show();
 
 				$(".remove").unbind("click");
-				$(".rotate").unbind("click");
-
+				//$(".rotate").unbind("click");
+				rotate=false;
 				$(".modal").unbind("shown.bs.modal");
 
 				$('.crop').each(function(i){
@@ -345,12 +345,13 @@ $(".rotate").bind('click',function(e){
 					}
 				}
 				setCookie('files',arr);
-				console.log(JSON.stringify(arr));
-				console.log(o);
+				//console.log(JSON.stringify(arr));
+				//console.log(o);
 				b.parent().parent().parent().parent().parent().find('.img').attr('src',o);
+				b.parent().parent().parent().parent().parent().find('.img').attr('data-url',o);
 				b.parent().parent().find('.modal-img').attr('src',o);
 				b.parent().parent().parent().parent().parent().find('.big-img').attr('src',o);
-				console.log(b.parent().parent().parent().parent().parent().find('.img'));
+				//console.log(b.parent().parent().parent().parent().parent().find('.img'));
 				b.parent().parent().parent().parent().parent().find('.loader').hide();
 				saveImages();
 
@@ -459,7 +460,7 @@ $(".rotate").bind('click',function(e){
 					});
 				});
 
-				$(".rotate").bind('click',function(e){
+				/*$(".rotate").bind('click',function(e){
 					if(rotate == false)
 					{
 					b  = $(this);
@@ -520,7 +521,7 @@ $(".rotate").bind('click',function(e){
 						}
 					});
 					}
-				});
+				});*/
 
 				$('.crop').each(function(i){
 					$(this).css({'pointer-events':'auto'});
