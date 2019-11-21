@@ -1,7 +1,7 @@
 <?php error_reporting(E_ALL); ini_set('display_errors', 'on'); echo "aaa"; ob_flush(); ?>
 <?php
 // Start the session
-session_start();
+//session_start();
 
 ini_set('memory_limit', '2048M');
 //change this to be whatever degree of rotation you want
@@ -39,8 +39,8 @@ if($type == 'image/jpeg')
 }
 else
 {
-	header('Content-type: image/png');	
-	$image = imagepng($filename);
+	//header('Content-type: image/png');	
+	$image = imagecreatefrompng($filename);
 	die("imagepng");
 	//$source = imagecreatefrompng($filename) or notfound();
 	$rotate = imagerotate($image,$degree,0);
