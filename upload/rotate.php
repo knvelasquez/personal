@@ -2,7 +2,7 @@
 // Start the session
 //session_start();
 
-//ini_set('memory_limit', '1024M');
+ini_set('memory_limit', '1024M');
 //change this to be whatever degree of rotation you want
 $degree = (isset($_POST["degree"]))?$_POST["degree"]:(isset($_GET["degree"]))?$_GET["degree"]:90;
 //this is the original file
