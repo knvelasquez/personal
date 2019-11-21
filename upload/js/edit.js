@@ -209,7 +209,9 @@ $("#save-images").bind("click",function(e){
 value=0;
 
 rotate = false;
-
+function base64encode(binary) {
+	return btoa(unescape(encodeURIComponent(binary)));
+}
 $(".rotate").bind('click',function(e){
 	$elem=$(this);
 	//$elem.unbind('click');
@@ -259,17 +261,20 @@ $(".rotate").bind('click',function(e){
 				}
 				
 				$.ajax({
-					url: o,
+					url: "uploads/"+file_orig.replace("uploads/",""),
 					type: 'get',
-					dataType: 'html',
+					//dataType: 'html',
 					async: false,
 					crossDomain: 'true',
-					success: function(data, status) {} 
+					success: function(data, status) {
+						
+					} 
 				});
 
 				setCookie('files',arr);
 				console.log(JSON.stringify(arr));
-				b.parent().parent().parent().find('.img').removeAttr("src").attr('src',o);
+				b.parent().parent().parent().find('.img').removeAttr("src");						
+				b.parent().parent().parent().find('.img').attr('src', "uploads/"+file_orig.replace("uploads/",""));
 				b.parent().parent().parent().parent().find('.modal-img').attr('src',o);
 				b.parent().parent().parent().parent().parent().find('.big-img').attr('src',o);
 				$(this).parent().parent().parent().parent().find('.modal-img').cropper('replace',o);
