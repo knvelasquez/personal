@@ -8,7 +8,7 @@ $degree = (isset($_POST["degree"]))?$_POST["degree"]:(isset($_GET["degree"]))?$_
 //this is the original file
 $filename=(isset($_POST["file"]))?$_POST["file"]:$_GET["file"];
 $filename="uploads/$filename";
-die($filename);
+
 //if(!file_exists($filename))
 //if(!@getimagesize($filename))
 //{
@@ -18,7 +18,7 @@ $ext = pathinfo($filename, PATHINFO_EXTENSION);
 $info   = @getimagesize($filename);
 $type = $info['mime'];
 $name = '../uploads/'.time().'.'.$ext;
-
+die($filename);
 // Tipo de contenido
 
 /*if(file_exists($name))
