@@ -31,7 +31,7 @@ $name = '../uploads/'.time().'.'.$ext;
 	
 if($type == 'image/jpeg')
 {
-	header('Content-type: image/jpeg');
+	//header('Content-type: image/jpeg');
 	$image=imagecreatefromjpeg($filename);
 	//$source=@imagecreatefromjpeg($filename) or notfound();
 	$rotate=@imagerotate($image,$degree,0);
@@ -41,7 +41,7 @@ if($type == 'image/jpeg')
 }
 else
 {
-	header('Content-type: image/png');	
+	//header('Content-type: image/png');	
 	$image = imagecreatefrompng($filename);	
 	//$source = imagecreatefrompng($filename) or notfound();
 	$rotate = imagerotate($image,$degree,0);
