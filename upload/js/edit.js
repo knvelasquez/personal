@@ -216,12 +216,13 @@ $(".rotate").bind('click',function(e){
 	if(rotate == false)
 	{
 	b  = $(this);	
-	file_orig = $(this).parent().parent().parent().find('.img').attr('src');
+	//file_orig = $(this).parent().parent().parent().find('.img').attr('src');
+	file_orig = $(this).parent().parent().parent().find('.img').attr('data-url');
 	$.ajax({
 		type: "POST",
 		url: "rotate.php",
 		data: {
-		 'file' : $(this).parent().parent().parent().find('.img').attr('src').replace("uploads/","")
+		 'file' : $(this).parent().parent().parent().find('.img').attr('data-url').replace("uploads/","")
 		},
 		beforeSend: function()
 		{
@@ -258,23 +259,23 @@ $(".rotate").bind('click',function(e){
 					}
 				}				
 				setCookie('files',arr);
-				//console.log(JSON.stringify(arr));
-				//b.parent().parent().parent().find('.img').removeAttr("src");				
-				setTimeout(function(){ 
+				//console.log(JSON.stringify(arr));					
+				b.parent().parent().parent().find('.img').attr('src',o);	
+				b.parent().parent().parent().parent().find('.loader').hide();																					
+				b.parent().parent().parent().parent().find('.modal-img').attr('src',"uploads/"+file_orig.replace("uploads/",""));
+				b.parent().parent().parent().parent().parent().find('.big-img').attr('src',"uploads/"+file_orig.replace("uploads/",""));
+				$(this).parent().parent().parent().parent().find('.modal-img').cropper('replace',"uploads/"+file_orig.replace("uploads/",""));
+				saveImages();
+				b.parent().parent().parent().parent().find('.loader').hide();													
+				rotate = false;				
+				/*setTimeout(function(){ 				
 					$.ajax({
-						url: "uploads/"+file_orig.replace("uploads/",""),
+						url: "uploads/"+file_orig.replace("uploads/","")+"?version="+new Date().getTime(),
 						type: 'GET',
-						success: function(data, status) {													
-							b.parent().parent().parent().find('.img').attr('src', "uploads/"+file_orig.replace("uploads/",""));														
-							b.parent().parent().parent().parent().find('.modal-img').attr('src',"uploads/"+file_orig.replace("uploads/",""));
-							b.parent().parent().parent().parent().parent().find('.big-img').attr('src',"uploads/"+file_orig.replace("uploads/",""));
-							$(this).parent().parent().parent().parent().find('.modal-img').cropper('replace',"uploads/"+file_orig.replace("uploads/",""));
-							saveImages();
-							b.parent().parent().parent().parent().find('.loader').hide();
-							rotate = false;							
-						} 
-					});					
-				}, 5000);																												
+						//contentType: "multipart/form-data",
+						success: function(data, status) {} 
+					});
+			}, 3000);	*/																									
 			}						
 		},
 		error: function()
