@@ -40,7 +40,7 @@ else
 {
 	header('Content-type: image/png');
 	die("ok");
-	$image = imagecreatefrompng($filename);	
+	$image = imagepng($filename);	
 	//$source = imagecreatefrompng($filename) or notfound();
 	$rotate = imagerotate($image,$degree,0);
 	@unlink($filename);	
