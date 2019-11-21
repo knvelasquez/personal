@@ -212,13 +212,10 @@ rotate = false;
 function base64encode(binary) {
 	return btoa(unescape(encodeURIComponent(binary)));
 }
-$(".rotate").bind('click',function(e){
-	$elem=$(this);
-	//$elem.unbind('click');
-	//$(".rotate").css("visibility","hidden");
+$(".rotate").bind('click',function(e){	
 	if(rotate == false)
 	{
-	b  = $(this);
+	b  = $(this);	
 	file_orig = $(this).parent().parent().parent().find('.img').attr('src');
 	$.ajax({
 		type: "POST",
@@ -228,6 +225,7 @@ $(".rotate").bind('click',function(e){
 		},
 		beforeSend: function()
 		{
+			b.parent().parent().parent().find('.img').removeAttr("src");
 			b.parent().parent().parent().parent().find('.loader').show();
 			rotate = true;
 		},
@@ -258,34 +256,26 @@ $(".rotate").bind('click',function(e){
 					{
 						console.log(arr[i]+" !== "+file_orig);
 					}
-				}
-				
-				$.ajax({
-					url: "uploads/"+file_orig.replace("uploads/",""),
-					type: 'get',
-					//dataType: 'html',
-					async: false,
-					crossDomain: 'true',
-					success: function(data, status) {
-						
-					} 
-				});
-
+				}				
 				setCookie('files',arr);
-				console.log(JSON.stringify(arr));
-				b.parent().parent().parent().find('.img').removeAttr("src");						
-				b.parent().parent().parent().find('.img').attr('src', "uploads/"+file_orig.replace("uploads/",""));
-				b.parent().parent().parent().parent().find('.modal-img').attr('src',o);
-				b.parent().parent().parent().parent().parent().find('.big-img').attr('src',o);
-				$(this).parent().parent().parent().parent().find('.modal-img').cropper('replace',o);
-				saveImages();
-			}
-				b.parent().parent().parent().parent().find('.loader').hide();
-				rotate = false;
+				//console.log(JSON.stringify(arr));
+				//b.parent().parent().parent().find('.img').removeAttr("src");				
 				setTimeout(function(){ 
-					//$elem.bind('click');
-					//$(".rotate").css("visibility","unset");
-				}, 2000);				
+					$.ajax({
+						url: "uploads/"+file_orig.replace("uploads/",""),
+						type: 'GET',
+						success: function(data, status) {													
+							b.parent().parent().parent().find('.img').attr('src', "uploads/"+file_orig.replace("uploads/",""));														
+							b.parent().parent().parent().parent().find('.modal-img').attr('src',o);
+							b.parent().parent().parent().parent().parent().find('.big-img').attr('src',o);
+							$(this).parent().parent().parent().parent().find('.modal-img').cropper('replace',o);
+							saveImages();
+							b.parent().parent().parent().parent().find('.loader').hide();
+							rotate = false;							
+						} 
+					});					
+				}, 3000);																												
+			}						
 		},
 		error: function()
 		{
