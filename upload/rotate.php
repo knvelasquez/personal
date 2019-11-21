@@ -39,8 +39,8 @@ if($type == 'image/jpeg')
 else
 {
 	header('Content-type: image/png');
-	$image = imagecreatefrompng($filename);
 	die("ok");
+	$image = imagecreatefrompng($filename);	
 	//$source = imagecreatefrompng($filename) or notfound();
 	$rotate = imagerotate($image,$degree,0);
 	@unlink($filename);	
