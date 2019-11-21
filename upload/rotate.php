@@ -6,9 +6,9 @@ ini_set('memory_limit', '1024M');
 ini_set('display_errors', 'on'); 
 echo "aaa"; 
 ob_flush();*/
-header('Cache-Control: no-cache, no-store, max-age=0, must-revalidate');
-header('Expires: January 01, 2013'); // Date in the past
-header('Pragma: no-cache');
+//header('Cache-Control: no-cache, no-store, max-age=0, must-revalidate');
+//header('Expires: January 01, 2013'); // Date in the past
+//header('Pragma: no-cache');
 //change this to be whatever degree of rotation you want
 $degree = (isset($_POST["degree"]))?$_POST["degree"]:(isset($_GET["degree"]))?$_GET["degree"]:-90;
 //this is the original file
@@ -39,14 +39,21 @@ if($type == 'image/jpeg')
 }
 else
 {
-	header("Content-Type: image/png");
+	//header("Content-Type: image/png");
 	$image = imagecreatefrompng($filename);			
 	$rotate = imagerotate($image,$degree,0);
-	@unlink($filename);			
+	@unlink($filename);		
+	ob_start();	
 	imagepng($rotate); //save the new image	
 	imagepng($rotate,$filename); //save the new image
 }
 //free the memory
-imagedestroy($image);
 imagedestroy($rotate);
+
+//$imagedata = ob_get_contents();
+ob_end_clean();
+$b64image = base64_encode(file_get_contents($filename));
+echo "data:image/png;base64,".$b64image;
+//echo '<img src="data:image/gif;base64,' . $image . '" />';
+//echo '<img src="data:image/png;base64,'.$b64image.'"/>';
 ?>
