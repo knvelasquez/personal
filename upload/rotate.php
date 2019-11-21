@@ -44,8 +44,13 @@ if($type == 'image/jpeg')
 }
 else
 {
-	//header('Content-type: image/png');	
 	$image = imagecreatefrompng($filename);	
+	
+	header('Cache-Control: no-cache, no-store, max-age=0, must-revalidate');
+	header('Expires: January 01, 2013'); // Date in the past
+	header('Pragma: no-cache');
+	header("Content-Type: image/png");
+	
 	//$source = imagecreatefrompng($filename) or notfound();
 	$rotate = imagerotate($image,$degree,0);
 	@unlink($filename);	
