@@ -18,7 +18,7 @@ $ext = pathinfo($filename, PATHINFO_EXTENSION);
 $info   = @getimagesize($filename);
 $type = $info['mime'];
 $name = '../uploads/'.time().'.'.$ext;
-die($filename);
+
 // Tipo de contenido
 
 /*if(file_exists($name))
@@ -40,6 +40,7 @@ else
 {
 	header('Content-type: image/png');
 	$image = imagecreatefrompng($filename);
+	die("ok");
 	//$source = imagecreatefrompng($filename) or notfound();
 	$rotate = imagerotate($image,$degree,0);
 	@unlink($filename);	
