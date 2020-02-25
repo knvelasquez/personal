@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <title>Kevin Velásquez - Personal</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta property="og:image" content="img/card.jpg">
+	<meta property="og:image" content="img/card.png">
 	<meta name="description" content="description of your website/webpage, make sure you use keywords!">
 <meta property="og:title" content="short title of your website/webpage" />
 <meta property="og:url" content="https://www.example.com/webpage/" />
