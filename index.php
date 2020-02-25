@@ -5,12 +5,14 @@
 <head>
     <meta charset="utf-8" />
     <title>Kevin Velásquez - Personal</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta property="og:image" content="img/card.png">
-	<meta name="description" content="description of your website/webpage, make sure you use keywords!">
-<meta property="og:title" content="short title of your website/webpage" />
-<meta property="og:url" content="https://www.example.com/webpage/" />
-<meta property="og:description" content="description of your website/webpage">
+    <meta property="og:site_name" content="sitename" />
+    <meta property="og:title" content="title">
+    <meta property="og:description" content="description">
+    <meta property="og:image" itemprop="image" content="https://kvelasquez.herokuapp.com/img/card.png">
+    <link itemprop="thumbnailUrl" href="https://kvelasquez.herokuapp.com/img/card.png"> 
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:updated_time" content="updatedtime">
+    <meta property="og:locale" content="en_GB" />
 
 	<link rel="stylesheet" href="fontawesome-free-5.5.0-web/css/all.css">
     <link rel="stylesheet" type="text/css" href="css/jquery.animatedheadline.css" />
