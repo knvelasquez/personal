@@ -6,7 +6,12 @@
     <meta charset="utf-8" />
     <title>Kevin Velásquez - Personal</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta property="og:image" content="https://lh3.googleusercontent.com/proxy/23ewI7BvDsrDk964f5lNnTOq4diHpjGqxYDq6khJ7EGzDlaWynbbHTRfSn2v7_E_U-Iply8YHv9yRWzM7dJqn7oxi-PJ3Lfs3vwXV3WDwjX-">
+	<meta property="og:image" content="img/card.jpg">
+	<meta name="description" content="description of your website/webpage, make sure you use keywords!">
+<meta property="og:title" content="short title of your website/webpage" />
+<meta property="og:url" content="https://www.example.com/webpage/" />
+<meta property="og:description" content="description of your website/webpage">
+
 	<link rel="stylesheet" href="fontawesome-free-5.5.0-web/css/all.css">
     <link rel="stylesheet" type="text/css" href="css/jquery.animatedheadline.css" />
     <link rel="stylesheet" type="text/css" href="css/materialize.min.css" />
